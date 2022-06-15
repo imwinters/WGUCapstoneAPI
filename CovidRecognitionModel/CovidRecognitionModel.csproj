@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.6.0" />
+    <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="1.6.0" />
+    <PackageReference Include="Microsoft.ML.Vision" Version="1.6.0" />
+    <PackageReference Include="SciSharp.TensorFlow.Redist" Version="2.3.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface\" />
+  </ItemGroup>
+  <ItemGroup Label="XRayModel">
+    <None Include="XRayModel.consumption.cs">
+      <DependentUpon>XRayModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="XRayModel.training.cs">
+      <DependentUpon>XRayModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="XRayModel.zip">
+      <DependentUpon>XRayModel.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
